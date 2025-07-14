@@ -1,0 +1,44 @@
+# baseURI: urn:x-evn-master:ergdfgrg
+
+# collectionId: ergdfgrg
+
+# collectionType: Taxonomy
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix edg: <http://edg.topbraid.solutions/model/> .
+@prefix ergdfgrg: <http://example.org/taxonomies/ergdfgrg#> .
+@prefix graphql: <http://datashapes.org/graphql#> .
+@prefix metadata: <http://topbraid.org/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://evn.topbraidlive.org/evnprojects#Taxonomy>
+  rdfs:subClassOf teamwork:Vocabulary ;
+.
+ergdfgrg:rwer
+  a skos:Concept ;
+  skos:prefLabel "rwer" ;
+.
+ergdfgrg:rwerwer
+  a skos:ConceptScheme ;
+  rdfs:label "rwerwer" ;
+  skos:hasTopConcept ergdfgrg:rwer ;
+.
+<urn:x-evn-master:ergdfgrg>
+  a <http://evn.topbraidlive.org/evnprojects#Taxonomy> ;
+  a teamwork:Vocabulary ;
+  a owl:Ontology ;
+  metadata:status metadata:UnderDevelopmentStatus ;
+  <http://topbraid.org/swa#defaultNamespace> "http://example.org/taxonomies/ergdfgrg#" ;
+  rdfs:label "ergdfgrg" ;
+  owl:imports <http://topbraid.org/skos.shapes> ;
+  owl:imports <http://topbraid.org/teamworkconstraints> ;
+.

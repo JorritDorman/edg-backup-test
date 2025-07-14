@@ -23,39 +23,14 @@
 <http://evn.topbraidlive.org/evnprojects#Taxonomy>
   rdfs:subClassOf teamwork:Vocabulary ;
 .
-testtax:ertet
-  a skos:Concept ;
-  skos:prefLabel "erdasdsatet" ;
-.
-testtax:fdsfg
+testtax:utyjyutyu
   a skos:ConceptScheme ;
-  rdfs:label "fdsfg" ;
-  skos:hasTopConcept testtax:ertet ;
+  rdfs:label "utyjyutyu" ;
+  skos:hasTopConcept testtax:yrtytyut ;
 .
-<http://topbraid.org/git#PushGraphToGit>
-  a dash:PushScript ;
-  dash:disabledForWorkflows true ;
-  dash:js """let graphURI = tbs.assetCollectionURI(tbs.currentAssetCollectionId()).uri
-let url = focusNode.stringValue(git.repositoryURL)
-let filePath = focusNode.stringValue(git.filePath)
-let ps = {
-	excludedURIs: focusNode.namedValues(git.excludedURI).map(v => v.uri),
-}
-IO.git.pull(url)
-let changed = IO.git.writeGraph(url, filePath, graphURI, ps)
-let message
-if(changed) {
-	message = `Upfated ${filePath} from graph ${graphURI}`
-	IO.git.commit(url, message)
-	IO.git.push(url)
-}
-else {
-	message = `No changes`
-}
-message
-""" ;
-  rdfs:comment "Writes the current master graph to the repository and file path from the provided props object." ;
-  rdfs:label "Push graph to git" ;
+testtax:yrtytyut
+  a skos:Concept ;
+  skos:prefLabel "yrtytyut" ;
 .
 <urn:x-evn-master:testtax>
   a <http://evn.topbraidlive.org/evnprojects#Taxonomy> ;

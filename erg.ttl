@@ -32,6 +32,30 @@ ergdfgrg:rwerwer
   rdfs:label "rwerwer" ;
   skos:hasTopConcept ergdfgrg:rwer ;
 .
+<http://topbraid.org/git#PushGraphToGit>
+  a dash:PushScript ;
+  dash:js """let graphURI = tbs.assetCollectionURI(tbs.currentAssetCollectionId()).uri
+let url = focusNode.stringValue(git.repositoryURL)
+let currentUser = smf.currentUserName()
+let filePath = focusNode.stringValue(git.filePath)
+let ps = {
+	excludedURIs: focusNode.namedValues(git.excludedURI).map(v => v.uri),
+}
+IO.git.pull(url)
+let changed = IO.git.writeGraph(url, filePath, graphURI, ps)
+let message
+if(changed) {
+	message = `Updated ${filePath} from graph ${graphURI}, by user ${currentUser}`
+	IO.git.commit(url, message)
+	IO.git.push(url)
+}
+else {
+	message = `No changes`
+}
+message
+""" ;
+  rdfs:comment "Extensies van git pull script" ;
+.
 <urn:x-evn-master:ergdfgrg>
   a <http://evn.topbraidlive.org/evnprojects#Taxonomy> ;
   a teamwork:Vocabulary ;

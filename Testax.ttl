@@ -25,7 +25,7 @@
 .
 testtax:ertet
   a skos:Concept ;
-  skos:prefLabel "ertet" ;
+  skos:prefLabel "erdasdsatet" ;
 .
 testtax:fdsfg
   a skos:ConceptScheme ;

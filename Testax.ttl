@@ -1,0 +1,45 @@
+# baseURI: urn:x-evn-master:testtax
+
+# collectionId: testtax
+
+# collectionType: Taxonomy
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix edg: <http://edg.topbraid.solutions/model/> .
+@prefix graphql: <http://datashapes.org/graphql#> .
+@prefix metadata: <http://topbraid.org/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix testtax: <http://jorrit.org/taxonomies/TestTax#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://evn.topbraidlive.org/evnprojects#Taxonomy>
+  rdfs:subClassOf teamwork:Vocabulary ;
+.
+testtax:ertet
+  a skos:Concept ;
+  skos:prefLabel "ertet" ;
+.
+testtax:fdsfg
+  a skos:ConceptScheme ;
+  rdfs:label "fdsfg" ;
+  skos:hasTopConcept testtax:ertet ;
+.
+<urn:x-evn-master:testtax>
+  a <http://evn.topbraidlive.org/evnprojects#Taxonomy> ;
+  a teamwork:Vocabulary ;
+  a owl:Ontology ;
+  metadata:status metadata:UnderDevelopmentStatus ;
+  <http://topbraid.org/swa#defaultNamespace> "http://jorrit.org/taxonomies/TestTax#" ;
+  rdfs:label "TestTax" ;
+  owl:imports <http://topbraid.org/skos.shapes> ;
+  owl:imports <http://topbraid.org/teamworkconstraints> ;
+  owl:imports <urn:x-evn-master:scripts> ;
+.
